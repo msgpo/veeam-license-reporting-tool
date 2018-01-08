@@ -117,44 +117,6 @@ class VeeamConnector(object):
 
         return data_return
 
-    def _GetVeeamProcessedVmsSummary(self):
-        (headers, code, ret) = self._RequestVeeamData(url = 'reports/summary/processed_vms', data = '', method = 'get')
-        data_return = []
-        print ret
-        o = self._CheckIfKeyExistsInDict(ret, 'ProcessedVmsReportFrame')
-        if o:
-            t = self._CheckIfKeyExistsInDict(o, 'Day')
-            print t
-            print 'robin'
-
-        for processed_vms_report in ret:
-            test = self._CheckIfKeyExistsInDict(ret, 'ProcessedVmsReportFrame')
-            print test
-            #if len(processed_vms_report['ProcessedVmsReportFrame']) > 0:
-            #    for test in processed_vms_report['ProcessedVmsReportFrame']:
-            #        print test
-
-            #if summary == 'ProcessedVmsReportFrame':
-                #summary = {
-                #    'ProtectedVms': int(self._CheckIfKeyExistsInDict(ret[summary], 'ProtectedVms')),
-                #    'BackedUpVms': int(self._CheckIfKeyExistsInDict(ret[summary], 'BackedUpVms')),
-                #    'ReplicatedVms': int(self._CheckIfKeyExistsInDict(ret[summary], 'ReplicatedVms')),
-                #    'RestorePoints': int(self._CheckIfKeyExistsInDict(ret[summary], 'RestorePoints')),
-                #    'FullBackupPointsSize': int(self._CheckIfKeyExistsInDict(ret[summary], 'FullBackupPointsSize')),
-                #    'IncrementalBackupPointsSize': int(self._CheckIfKeyExistsInDict(ret[summary], 'IncrementalBackupPointsSize')),
-                #    'ReplicaRestorePointsSize': int(self._CheckIfKeyExistsInDict(ret[summary], 'ReplicaRestorePointsSize')),
-                #    'SourceVmsSize': int(self._CheckIfKeyExistsInDict(ret[summary], 'SourceVmsSize')),
-                #    'SuccessBackupPercents': int(self._CheckIfKeyExistsInDict(ret[summary], 'SuccessBackupPercents')),
-                #    'ProtectedVmsReportLink': self._CheckIfKeyExistsInDict(ret[summary], 'ProtectedVmsReportLink')
-                #}
-                #data_return.append(summary)
-
-                #print summary['ProcessedVmsReportFrame']['Day']
-
-            #print summary
-
-        return data_return
-
     def _CalculateProtectedVms(self):
         summary = self._GetVeeamVmsSummaryOverview()
 
