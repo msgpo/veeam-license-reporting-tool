@@ -27,7 +27,7 @@ class Mailer(object):
         output += ' table { border-collapse: collapse; }\n'
         output += ' th { background: #00cc00; color: #FFFFFF; text-align: left; }\n'
         output += ' table, th, td { border: 1px solid black; text-align: left; }\n'
-        output += ' tr:nth-child(even){ background-color: #80ff80; }\n'
+        output += ' tr:nth-child(even){ background-color: #ccffcc; }\n'
         output += ' h2 { color: #000000; }\n'
         output += '</style>\n'
         output += '</head>\n'
