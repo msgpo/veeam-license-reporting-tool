@@ -40,8 +40,6 @@ def main():
 
 
 
-        #test = veeam._GetVeeamProcessedVmsSummary()
-
         # add data to summary list
         sum_data.append({
             'hostname': server['hostname'],
