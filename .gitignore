@@ -1,0 +1,5 @@
+*.pyc
+.idea
+/config/collectors.conf
+/config/db.conf
+/config/mail.conf

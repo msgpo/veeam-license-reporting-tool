@@ -1,0 +1,15 @@
+[my veeam host]
+hostname = 
+username = 
+password = 
+collector = 
+point_value = 
+license = veeam
+
+[my baashunter host]
+hostname = 
+username = 
+password = 
+collector = 
+point_value = 
+license = baashunter
