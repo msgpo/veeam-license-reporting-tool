@@ -1,4 +1,4 @@
 [default]
 email_from = noreply@myserver.com
 email_rcpts = myuser1@mydomain.com, myuser2@mydomain.com # use comma separation for multiple rcpts
-email_subject = 'Veeam Usage Report'
+email_subject = Veeam Usage Report

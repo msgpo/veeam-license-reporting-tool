@@ -51,7 +51,6 @@ class Mailer(object):
             output += '  </tr>\n'
 
         output += '</table>\n'
-        output += '<p>This is an automated message, for questions contact <a href="mailto: robin.ostlund@cygate.se">robin.ostlund@cygate.se</a></p>\n'
         output += '<p>Message generated: %s-%s-%s %s</p>\n' % (self.time_now_year, self.time_now_month, self.time_now_day, self.time_now_clock)
         output += '</body>\n'
         output += '</html>'
