@@ -37,8 +37,13 @@ class Mailer(object):
         output += '  <tr>\n'
         output += '    <th style="width: 70px;">Year</th>\n'
         output += '    <th style="width: 70px;">Month</th>\n'
-        output += '    <th style="width: 70px;">Value</th>\n'
-        output += '    <th style="width: 70px;">Points</th>\n'
+        output += '    <th style="width: 70px;">VMs</th>\n'
+        points = False
+        for value in self.mysql_values:
+            if value['points']:
+                output += '    <th style="width: 70px;">Points</th>\n'
+                points = True
+                break
         output += '    <th style="width: 200px;">Type</th>\n'
         output += '  </tr>\n'
         for value in self.mysql_values:
@@ -46,7 +51,8 @@ class Mailer(object):
             output += '    <td>%s</td>\n' % (value['year'])
             output += '    <td>%s</td>\n' % (value['month'])
             output += '    <td>%s</td>\n' % (value['value'])
-            output += '    <td>%s</td>\n' % (value['points'])
+            if points:
+                output += '    <td>%s</td>\n' % (value['points'])
             output += '    <td>%s</td>\n' % (value['license'])
             output += '  </tr>\n'
 
